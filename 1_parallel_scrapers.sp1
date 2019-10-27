@@ -1,0 +1,1 @@
+gci | %{ $_.FullName} | ?{$_ -like '*.json'} | % -Parallel {python 1_image_scrapper.py $_} -ThrottleLimit 20

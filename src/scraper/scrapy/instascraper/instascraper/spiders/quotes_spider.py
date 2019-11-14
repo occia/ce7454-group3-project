@@ -4,7 +4,7 @@ class QuotesSpider(scrapy.Spider):
     name = 'profiles'
     country = 'canada'
     # Hardcoded path of a country's users names
-    file_path = '../../../data/test/usernames/%s.txt' %country
+    file_path = '../../../../../data/test/usernames/%s.txt' %country
     with open(file_path) as f:
         start_urls = []
         for u in f.readlines():

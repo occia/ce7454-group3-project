@@ -209,13 +209,17 @@ def plot_data(net, bin, country = 'all', dataset='instagram'):
     lists = sorted(acc_adj_age.items()) # sorted by key, return a list of tuples
     x, y = zip(*lists) # unpack a list of pairs into two tuples
 
-    b = np.linspace(0,50)
+    scale = 60
+    if dataset == 'utk':
+        scale = 100
+        
+    b = np.linspace(0,scale)
     a = b
     plt.plot(a, b, color = 'red')
     plt.plot(x,y, label = country)
 
-    plt.yticks(np.arange(0, 60, 6.0))
-    plt.xticks(np.arange(0, 60, 6.0))
+    plt.yticks(np.arange(0, scale, 6.0))
+    plt.xticks(np.arange(0, scale, 6.0))
     plt.legend()
 
     #print(acc_adj_age)
